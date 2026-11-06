@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>SDG Individual Writing Lab | College English 1</title>
+<style>
+:root{--navy:#17324d;--teal:#167c80;--mint:#ddf3ec;--pale:#f2f6f8;--ink:#273746;--muted:#657786;--line:#d8e1e8;--gold:#e7b65a;--red:#b65b4b}
+*{box-sizing:border-box} body{margin:0;background:#edf2f5;color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.48}
+.page{max-width:980px;margin:22px auto;background:#fff;padding:26px 30px 34px;border-radius:14px;box-shadow:0 7px 24px #17324d16;position:relative}
+header{background:var(--navy);color:white;padding:24px 26px;border-radius:11px;margin-bottom:20px}
+.kicker{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#aee5d9;margin-bottom:8px}
+h1{font-size:29px;line-height:1.15;margin:0 0 9px}header p{margin:0;color:#e4edf3;max-width:820px}
+.identity{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:12px;margin:16px 0}
+.card{border:1px solid var(--line);border-radius:11px;padding:18px;margin:14px 0;background:white}
+h2{font-size:17px;color:var(--navy);margin:0 0 8px}h3{font-size:13px;color:var(--teal);margin:13px 0 6px}
+label{display:block;font-size:12px;font-weight:700;color:var(--navy);margin:0 0 5px}
+input[type=text],input[type=number],input[type=url],textarea,select{width:100%;border:1px solid #cbd6de;border-radius:7px;padding:10px 11px;font:14px Arial;color:var(--ink);background:white}
+textarea{min-height:66px;resize:vertical;line-height:1.5}input:focus,textarea:focus,select:focus{outline:2px solid #167c8040;border-color:var(--teal)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.hint{font-size:12px;color:var(--muted);margin:5px 0 0}.pill{display:inline-block;background:var(--mint);color:var(--teal);padding:4px 9px;border-radius:999px;font-weight:700;font-size:11px}
+.notice{background:#fff7e7;border-left:4px solid var(--gold);padding:11px 13px;border-radius:6px;font-size:13px;margin:10px 0}
+.timerbar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;background:var(--pale);padding:11px 13px;border-radius:8px;margin:16px 0}
+#timer{font-weight:700;color:var(--navy);font-variant-numeric:tabular-nums;font-size:18px}.small{font-size:12px;color:var(--muted)}
+.btn{border:0;border-radius:7px;padding:10px 14px;font-weight:700;cursor:pointer;background:var(--teal);color:white}.btn.secondary{background:#e5edf1;color:var(--navy)}.btn.warn{background:#a95145}.btn:disabled{opacity:.45;cursor:not-allowed}
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.counter{font-size:13px;font-weight:700;color:var(--teal)}
+.checkline{display:flex;gap:9px;align-items:flex-start;font-size:13px;margin:9px 0}.checkline input{margin-top:3px}
+footer{border-top:1px solid var(--line);padding-top:12px;margin-top:20px;font-size:11px;color:var(--muted);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.progress{height:7px;background:#e7edf1;border-radius:9px;overflow:hidden}.progress>div{height:100%;width:0;background:var(--teal);transition:width .2s}
+.watermark{display:none}
+@media(max-width:720px){.page{margin:0;padding:14px;border-radius:0}.identity,.grid2,.grid3{grid-template-columns:1fr}h1{font-size:24px}.card{padding:14px}}
+@media print{
+ @page{size:A4;margin:14mm 13mm 15mm}
+ body{background:white}.page{max-width:none;margin:0;padding:0;border:0;box-shadow:none;border-radius:0}
+ header{background:#17324d !important;-webkit-print-color-adjust:exact;print-color-adjust:exact;padding:14px 17px}
+ .no-print,.timerbar,.toolbar,.progress{display:none!important}
+ .watermark{display:block;position:fixed;left:14%;top:42%;transform:rotate(-27deg);font-size:35px;font-weight:800;color:#dbe2e6;opacity:.24;z-index:0;pointer-events:none;white-space:nowrap}
+ .card{break-inside:avoid;padding:12px;margin:9px 0}.identity{grid-template-columns:1.4fr 1fr 1fr}
+ textarea{min-height:50px;resize:none;border:1px solid #aebbc5}
+ input,textarea{font-size:11px;padding:6px}
+ footer{font-size:9px}
+}
+</style>
+</head>
+<body>
+<div class="page" id="worksheet">
+<header>
+  <div class="kicker">College English 1 • Topic 5: Environmental Concerns</div>
+  <h1>Individual Environmental Writing Lab</h1>
+  <p>Use your group’s assigned reading to discuss an environmental challenge, support a claim with source information, and apply noun and adverbial clauses.</p>
+</header>
+<div class="identity">
+  <div><label for="student">Student name</label><input id="student" type="text" data-save placeholder="Enter your full name"></div>
+  <div><label for="studentId">Student ID</label><input id="studentId" type="text" data-save placeholder="Student ID"></div>
+  <div><label for="group">Group / assigned SDG</label><input id="group" type="text" data-save placeholder="e.g. Group 5 — SDG 13"></div>
+</div>
+<div class="timerbar no-print">
+  <span class="pill">35-minute writing task</span><span id="timer">35:00</span>
+  <button class="btn" id="startTimer" type="button">Start timer</button>
+  <button class="btn secondary" id="finishTimer" type="button">Record finish time</button>
+  <span class="small" id="timerStatus">Timer is advisory; it does not submit your work.</span>
+</div>
+<div class="card">
+  <h2>1. Record your source</h2>
+  <p class="small">Use the article assigned to your group. Copy source details carefully. This is a simple author–year citation exercise, not a full APA reference task.</p>
+  <div class="grid2">
+    <div><label for="author">Author or organization</label><input id="author" type="text" data-save placeholder="e.g. United Nations Environment Programme"></div>
+    <div><label for="year">Publication year</label><input id="year" type="text" data-save placeholder="e.g. 2024"></div>
+  </div>
+  <div style="margin-top:10px"><label for="articleTitle">Article title</label><input id="articleTitle" type="text" data-save placeholder="Enter the article title"></div>
+  <div style="margin-top:10px"><label for="sourceUrl">Original article URL</label><input id="sourceUrl" type="url" data-save placeholder="https://..."></div>
+</div>
+<div class="card">
+  <h2>2. Plan your response</h2>
+  <div><label for="issue">Environmental issue: What problem does the article discuss?</label><textarea id="issue" data-save placeholder="Identify the main environmental challenge..."></textarea></div>
+  <div style="margin-top:10px"><label for="claim">Your main claim: What do you want to argue about this issue?</label><textarea id="claim" data-save placeholder="Write one clear claim..."></textarea></div>
+  <div class="grid2" style="margin-top:10px">
+    <div><label for="evidence1">Supporting detail 1 (paraphrase it)</label><textarea id="evidence1" data-save placeholder="Use your own wording..."></textarea></div>
+    <div><label for="evidence2">Supporting detail 2 (paraphrase it)</label><textarea id="evidence2" data-save placeholder="Use your own wording..."></textarea></div>
+  </div>
+  <div style="margin-top:10px"><label for="explain">How do these details support your claim?</label><textarea id="explain" data-save placeholder="Explain the connection between the evidence and your claim..."></textarea></div>
+  <div class="notice"><strong>Paraphrasing reminder:</strong> preserve the source meaning, use your own wording and sentence structure, and cite the source. Changing only a few words is not enough.</div>
+</div>
+<div class="card">
+  <h2>3. Write your individual response</h2>
+  <p class="small">Write one coherent paragraph of approximately <strong>150–180 words</strong>. Discuss the issue, explain why it matters, use supporting details from your article, and suggest a possible response.</p>
+  <div class="grid2">
+    <div><label for="citationStyle">Simple citation pattern</label><select id="citationStyle" data-save><option value="narrative">Narrative: According to Author (Year), ...</option><option value="parenthetical">Parenthetical: ... (Author, Year).</option><option value="both">Use both patterns where appropriate</option></select></div>
+    <div><label>Word count</label><div class="timerbar" style="margin:0;padding:8px 12px"><span class="counter" id="wordCount">0 words</span><span class="small" id="wordTarget">Target: 150–180 words</span></div></div>
+  </div>
+  <div style="margin-top:10px"><label for="response">Your paragraph</label><textarea id="response" data-save style="min-height:260px" placeholder="Write your paragraph here. Include your claim, paraphrased evidence, citation(s), explanation and possible response..."></textarea></div>
+  <div class="progress no-print" style="margin-top:10px"><div id="progressBar"></div></div>
+  <p class="hint" id="wordFeedback">The word counter is a guide. It does not evaluate writing quality or verify paraphrases.</p>
+</div>
+<div class="card">
+  <h2>4. Grammar check: noun and adverbial clauses</h2>
+  <p class="small">Find the clauses in your own paragraph. Copy them into the fields below, then label their function. A clause checker cannot judge meaning automatically, so review your choices.</p>
+  <div class="grid2">
+    <div><label for="nc1">Noun clause 1 (NC)</label><input id="nc1" type="text" data-save placeholder="Copy your first noun clause"></div>
+    <div><label for="nc2">Noun clause 2 (NC)</label><input id="nc2" type="text" data-save placeholder="Copy your second noun clause"></div>
+    <div><label for="ac1">Adverbial clause 1 (AC)</label><input id="ac1" type="text" data-save placeholder="Copy your first adverbial clause"></div>
+    <div><label for="ac2">Adverbial clause 2 (AC)</label><input id="ac2" type="text" data-save placeholder="Copy your second adverbial clause"></div>
+  </div>
+  <p class="hint">Noun clause: acts as a noun (for example, the object of a verb). Adverbial clause: adds a relationship such as cause, time, condition, contrast or purpose.</p>
+</div>
+<div class="card">
+  <h2>5. Final review before submission</h2>
+  <label class="checkline"><input type="checkbox" data-save id="ck1">My paragraph contains a clear claim about the environmental issue.</label>
+  <label class="checkline"><input type="checkbox" data-save id="ck2">I included at least two supporting details from the assigned article.</label>
+  <label class="checkline"><input type="checkbox" data-save id="ck3">I paraphrased the source information instead of copying it.</label>
+  <label class="checkline"><input type="checkbox" data-save id="ck4">I included an author–year citation close to the information it supports.</label>
+  <label class="checkline"><input type="checkbox" data-save id="ck5">I used at least two noun clauses and two adverbial clauses.</label>
+  <label class="checkline"><input type="checkbox" data-save id="ck6">My paragraph explains why the issue matters and suggests a response.</label>
+  <label class="checkline"><input type="checkbox" data-save id="integrity">I confirm that this is my own writing and that I have acknowledged the source I used.</label>
+</div>
+<div class="toolbar no-print">
+  <button class="btn" type="button" id="printBtn">Print / Save completed worksheet as PDF</button>
+  <button class="btn secondary" type="button" id="clearBtn">Clear saved responses</button>
+  <span class="small" id="saveStatus">Autosave is active in this browser.</span>
+</div>
+<footer><span>College English 1 • SDG Individual Writing Lab</span><span>Use evidence responsibly • Paraphrase accurately • Cite the source</span></footer>
+<div class="watermark">COLLEGE ENGLISH 1 • STUDENT WORK</div>
+</div>
+<script>
+(()=>{
+ const $=id=>document.getElementById(id);
+ const STORE='sdg_individual_writing_lab_v2';
+ const fields=[...document.querySelectorAll('[data-save]')];
+ function save(){const data={};fields.forEach(el=>{data[el.id]=el.type==='checkbox'?el.checked:el.value;});try{localStorage.setItem(STORE,JSON.stringify(data));$('saveStatus').textContent='Saved locally in this browser.';}catch(e){$('saveStatus').textContent='Autosave unavailable in this browser.';}}
+ function restore(){try{const d=JSON.parse(localStorage.getItem(STORE)||'{}');fields.forEach(el=>{if(Object.prototype.hasOwnProperty.call(d,el.id)){if(el.type==='checkbox')el.checked=!!d[el.id];else el.value=d[el.id];}});}catch(e){} updateWords();}
+ fields.forEach(el=>el.addEventListener('input',()=>{save();if(el.id==='response')updateWords();}));
+ fields.filter(el=>el.type==='checkbox'||el.tagName==='SELECT').forEach(el=>el.addEventListener('change',save));
+ function updateWords(){const v=$('response').value.trim();const n=v? v.split(/\s+/).length:0;$('wordCount').textContent=n+' words';const p=Math.min(100,Math.round(n/180*100));$('progressBar').style.width=p+'%';let msg='Target: 150–180 words.';if(n<150)msg='Add detail: you are below the suggested range.';else if(n<=180)msg='Within the suggested word range.';else msg='You are above the suggested word range.';$('wordFeedback').textContent=msg;}
+ restore();
+ let remaining=35*60, timerId=null, startedAt=null;
+ function renderTimer(){const m=String(Math.floor(remaining/60)).padStart(2,'0');const s=String(remaining%60).padStart(2,'0');$('timer').textContent=m+':'+s;}
+ $('startTimer').addEventListener('click',()=>{if(timerId)return;startedAt=new Date();$('timerStatus').textContent='Started: '+startedAt.toLocaleString();timerId=setInterval(()=>{if(remaining>0){remaining--;renderTimer();}else{clearInterval(timerId);timerId=null;$('timerStatus').textContent='Advisory timer reached zero. Your work remains saved.';}},1000);});
+ $('finishTimer').addEventListener('click',()=>{if(timerId){clearInterval(timerId);timerId=null;}const end=new Date();$('timerStatus').textContent='Finish recorded: '+end.toLocaleString()+(startedAt?' • Started: '+startedAt.toLocaleString():' • Timer was not started');save();});
+ renderTimer();
+ let tabWarnings=0;document.addEventListener('visibilitychange',()=>{if(document.hidden){tabWarnings++;$('timerStatus').textContent='Tab visibility advisory recorded: '+tabWarnings+' time(s). This does not affect your work.';}});
+ $('printBtn').addEventListener('click',()=>{save();window.print();});
+ $('clearBtn').addEventListener('click',()=>{if(confirm('Clear all saved responses from this browser?')){localStorage.removeItem(STORE);fields.forEach(el=>{if(el.type==='checkbox')el.checked=false;else el.value='';});updateWords();$('saveStatus').textContent='Saved responses cleared.';}});
+ // Light deterrents outside editable fields. Inputs remain usable, including paste, for accessibility and drafting.
+ document.addEventListener('contextmenu',e=>{if(!e.target.closest('input,textarea,select,button'))e.preventDefault();});
+ document.addEventListener('dragstart',e=>{if(!e.target.closest('input,textarea,select,button'))e.preventDefault();});
+ document.addEventListener('copy',e=>{if(!e.target.closest('input,textarea'))e.preventDefault();});
+ document.addEventListener('cut',e=>{if(!e.target.closest('input,textarea'))e.preventDefault();});
+})();
+</script>
+</body>
+</html>
